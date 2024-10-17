@@ -12,10 +12,10 @@ export const NavBar = () => {
   const currentPath = usePathname();
   const { status, data: session } = useSession();
 
-  if (status === "authenticated" && session.user && session.user.name) {
-    console.log(session);
-    console.log(session.user.name.charAt(0));
-  }
+  // if (status === "authenticated" && session.user && session.user.name) {
+  //   console.log(session);
+  //   console.log(session.user.name.charAt(0));
+  // }
 
   return (
     <nav className="p-4 m-1 flex items-center justify-between space-x-3 font-medium text-gray-800 border-2 border-gray-500 rounded-xl">

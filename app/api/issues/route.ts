@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
 
   const body = await req.json();
   const validation = IssueSchema.safeParse(body);
-  // console.log(body, '\n', validation);
+
   if (!validation.success) {
     return NextResponse.json(validation.error.format(), { status: 400 });
   }
@@ -24,6 +24,6 @@ export async function POST(req: NextRequest) {
       description: body.description,
     },
   });
-  // console.log(newIssueData);
+
   return NextResponse.json(newIssueData, { status: 201 });
 }
