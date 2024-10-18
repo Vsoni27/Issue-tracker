@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import authOptions from "@/app/auth/authOptions";
 
 export async function GET(req: NextRequest) {
-  const session = getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
   if (!session) {
     console.log("Unauthorised User");
     return NextResponse.json({}, { status: 401 });

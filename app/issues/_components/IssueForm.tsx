@@ -1,7 +1,7 @@
 "use client";
 import { Button, Text, TextField } from "@radix-ui/themes";
-// import dynamic from "next/dynamic";
-import SimpleMdeReact from "react-simplemde-editor";
+import dynamic from "next/dynamic";
+// import SimpleMdeReact from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import { Controller, useForm } from "react-hook-form";
 import axios from "axios";
@@ -15,7 +15,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { issue } from "@prisma/client";
 
-// const SimpleMDE = dynamic(() => import('react-simplemde-editor'), {ssr: false})
+const SimpleMdeReact = dynamic(() => import('react-simplemde-editor'), {ssr: false})
 
 type IssueData = z.infer<typeof IssueSchema>; // automatically will set the IssueData interface
 
